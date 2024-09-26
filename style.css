@@ -101,7 +101,8 @@ li {
 }
 
 .heading-1,
-.heading-2 {
+.heading-2,
+.subheading {
   font-weight: var(--fw-bold);
   letter-spacing: -0.5px;
   text-wrap: balance;
@@ -116,8 +117,7 @@ li {
 .heading-2 {
   font-size: var(--fs-md);
   line-height: 1.2;
-  margin-top: var(--sp-lg);
-  margin-bottom: var(--sp-xsm);
+  margin-block: var(--sp-lg);
 }
 
 .link:link,
@@ -172,7 +172,7 @@ li {
 
 /* Header */
 .logo {
-  height: 6rem;
+  height: 5.5rem;
 }
 
 /* Footer */
@@ -225,6 +225,11 @@ li {
 .main {
   justify-content: center;
   gap: var(--sp-md);
+}
+
+.subheading {
+  font-size: var(--fs-sm);
+  line-height: 1.2;
 }
 
 /* ======================= */
