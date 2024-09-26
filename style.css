@@ -1,0 +1,282 @@
+/**************************/
+/* CSS Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/**************************/
+/* Custom properties (variables) for colors, font-weights, font-sizes, spacing */
+
+:root {
+  --clr-bg: #3f625b;
+  --clr-bg-tint: #5f867f;
+  /* --clr-bg-shade: #2c4641; */
+  --clr-bg-shade: hsla(168, 23%, 22%, 0.85);
+  --clr-text: #ffffff;
+  --clr-link: #bb5b27;
+  --clr-link-tint: #bb6a3e;
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fs-xsm: 0.75rem;
+  --fs-sm: 1rem;
+  --fs-md: 1.4rem;
+  --fs-lg: 2rem;
+  --sp-xsm: 0.5rem;
+  --sp-sm: 1rem;
+  --sp-md: 1.6rem;
+  --sp-lg: 2rem;
+  --sp-xl: 4rem;
+}
+
+/**************************/
+/* Local Fonts */
+/* google-webfonts-helper */
+/* A Hassle-Free Way to Self-Host Google Fonts */
+/* https://gwfh.mranftl.com/fonts */
+
+/* inter-regular - greek_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/inter-v18-greek_latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-700 - greek_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/inter-v18-greek_latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* ======================= */
+/* General styling */
+/* ======================= */
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  background-color: var(--clr-bg);
+  background-repeat: no-repeat;
+  background-image: url("images/tree-bg.svg");
+  background-position: left 135% bottom 2%;
+  background-size: 80% auto;
+  color: var(--clr-text);
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: var(--fs-sm);
+  padding: var(--sp-md);
+  gap: var(--sp-lg);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+p,
+li {
+  max-width: 100ch;
+}
+
+/* ======================= */
+/* Reusable components */
+/* ======================= */
+
+.container {
+  padding: var(--sp-md);
+  background-color: var(--clr-bg-shade);
+  border-radius: 10px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading-1,
+.heading-2 {
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.5px;
+  text-wrap: balance;
+}
+
+.heading-1 {
+  font-size: var(--fs-lg);
+  line-height: 1.05;
+  margin-bottom: var(--sp-xl);
+}
+
+.heading-2 {
+  font-size: var(--fs-md);
+  line-height: 1.2;
+  margin-top: var(--sp-lg);
+  margin-bottom: var(--sp-xsm);
+}
+
+.link:link,
+.link:visited {
+  text-decoration: none;
+  color: var(--clr-text);
+  font-weight: var(--fw-bold);
+  border-bottom: 2px solid var(--clr-link);
+  padding-bottom: 1px;
+  transition: all 0.25s;
+}
+
+.link:focus {
+  outline: none;
+  /* outline: 4px dotted #e67e22; */
+  /* outline-offset: 2px; */
+  box-shadow: 0 0 0 0.2rem var(--clr-link-tint);
+  border-bottom: 2px solid transparent;
+  border-radius: 4px;
+}
+
+.link:hover,
+.link:active {
+  color: var(--clr-link);
+  border-bottom: 2px solid transparent;
+}
+
+/* ======================= */
+/* Utility classes */
+/* ======================= */
+
+/* .margin-bottom-xsm {
+  margin-bottom: var(--sp-xsm);
+} */
+
+.center-text {
+  text-align: center;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+/* ======================= */
+/* Sitewide styling */
+/* ======================= */
+
+/* Main */
+.main {
+  max-width: 40rem; /* 640px */
+}
+
+/* Header */
+.logo {
+  height: 6rem;
+}
+
+/* Footer */
+.footer {
+  gap: var(--sp-lg);
+}
+
+.contact-box-title {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-md);
+  letter-spacing: 0.75px;
+  margin-bottom: var(--sp-md);
+}
+
+.footer-contacts {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+}
+
+.contacts-box {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+}
+
+.contacts-icon {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+}
+
+.footer-heading {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-sm);
+}
+
+.footer-subheading {
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-sm);
+  margin-top: var(--sp-xsm);
+  transition: all 200ms;
+}
+
+/* ======================= */
+/* Homepage */
+/* ======================= */
+
+.main {
+  justify-content: center;
+  gap: var(--sp-md);
+}
+
+/* ======================= */
+/* MEDIA QUERIES */
+/* changing the layout to flex-row at 704px and 984px */
+/* ======================= */
+
+@media (width >= 44rem) {
+  /* ======================= */
+  /* Sitewide styling */
+  /* ======================= */
+  :root {
+    --fs-lg: 2.5rem;
+    --fs-md: 1.6rem;
+  }
+
+  body {
+    background-position: right -15% bottom 5%;
+    background-size: 60% auto;
+  }
+
+  .logo {
+    height: 7rem;
+  }
+
+  .footer-contacts {
+    flex-direction: row;
+    gap: var(--sp-lg);
+  }
+
+  .contacts-box {
+    align-items: flex-start;
+  }
+}
+
+@media (width >= 61.5rem) {
+  /* ======================= */
+  /* Sitewide styling */
+  /* ======================= */
+  body {
+    background-size: 40% auto;
+  }
+
+  .main {
+    max-width: 90rem; /* 1440px */
+  }
+
+  .logo {
+    height: 8rem;
+  }
+
+  .contacts-box {
+    align-items: center;
+  }
+}
